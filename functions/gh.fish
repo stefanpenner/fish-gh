@@ -5,7 +5,10 @@ function gh -a fullname
   set git git@github.com:$org/$repo
   set dest $HOME/src/$org/$repo
   mkdir -p $HOME/src/$org 2> /dev/null
-  echo "$git -> $dest"
-  git clone $git $dest
+  if test -d $HOME/src/$org/$dest
+  else
+    echo "$git -> $dest"
+    git clone $git $dest
+  end
   cd $dest
 end
