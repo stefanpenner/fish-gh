@@ -1,4 +1,4 @@
-function gh -a fullname
+function gh-co -a fullname
   set name (string split '/' $fullname)
 
   set org $name[1]
